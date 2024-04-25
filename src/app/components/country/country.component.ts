@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries/countries.service';
+import { Country } from '../../model/country';
 
 @Component({
   selector: 'app-country',
@@ -8,14 +9,15 @@ import { CountriesService } from '../../services/countries/countries.service';
   templateUrl: './country.component.html',
   styleUrl: './country.component.scss'
 })
-export class CountryComponent {
-  countryName!: string;
+export class CountryComponent implements OnInit {
+  @Input() country?: Country;
 
   constructor(public countriesService: CountriesService) {
 
   }
 
-  setCountryByName(name: String) {
-
+  ngOnInit(): void {
+      
   }
+
 }

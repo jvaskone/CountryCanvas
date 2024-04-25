@@ -1,6 +1,6 @@
 <div>
-    <p>Number of countries recived: {{countries.length}}</p>
-    <ul *ngFor="let country of countries">
-        <li>{{country.name.common}}</li>
-    </ul>
+    <p *ngIf="countries">Number of countries recived: {{countries.length}}</p>
+    <div *ngFor="let country of countries">
+        <app-country [country]="country"></app-country>
+    </div>
 </div>
