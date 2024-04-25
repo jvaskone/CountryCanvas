@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries/countries.service';
 import { Country } from '../../model/country';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-country',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './country.component.html',
   styleUrl: './country.component.scss'
 })

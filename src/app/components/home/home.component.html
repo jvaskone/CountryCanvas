@@ -1,6 +1,8 @@
 <div>
     <p *ngIf="countries">Number of countries recived: {{countries.length}}</p>
-    <div *ngFor="let country of countries">
+    <div class="card-container">
+    <div  *ngFor="let country of countries">
         <app-country [country]="country"></app-country>
+    </div>
     </div>
 </div>

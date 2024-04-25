@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
       this.countriesService.getCountries().subscribe(response => {
         this.countries = response;
+        this.countries = this.countries.sort((c1, c2) => c2.population - c1.population);
       });      
   }
 }
