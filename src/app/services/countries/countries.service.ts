@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Country } from '../../model/country';
 
 @Injectable({
@@ -14,5 +14,10 @@ export class CountriesService {
 
   getCountries(): Observable<Array<Country>>{
     return this.httpClient.get<Array<Country>>(`${this.apiUrl}/all`);
+  }
+
+  getCountry(name: String): Observable<Country>{
+    return this.httpClient.get<Array<Country>>(`${this.apiUrl}/alpha/${name}`).pipe(
+      map((item) => item[0]));
   }
 }

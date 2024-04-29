@@ -1,0 +1,23 @@
+.flag-container {
+    display: flex;
+    gap: 40px;
+
+}
+.description-container {
+    font-size: small;
+}
+.label-value-container {
+    margin: 10px 0px;
+}
+.label {
+    font-weight: 600;    
+}
+
+h2 {
+    font-family: sans;
+    font-weight: 500;
+}
+
+.flag {
+    border: 1px solid;
+}

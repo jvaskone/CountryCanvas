@@ -3,13 +3,14 @@ import { CountriesService } from '../../services/countries/countries.service';
 import { NgFor, NgIf } from '@angular/common';
 import { Country } from '../../model/country';
 import { CountryComponent } from "../country/country.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
-    imports: [NgFor, NgIf, CountryComponent]
+    imports: [NgFor, NgIf, CountryComponent, RouterModule]
 })
 export class HomeComponent implements OnInit{
 

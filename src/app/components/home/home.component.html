@@ -1,8 +1,11 @@
 <div>
-    <p *ngIf="countries">Number of countries recived: {{countries.length}}</p>
+    <!-- <p *ngIf="countries">Number of countries recived: {{countries.length}}</p> -->
     <div class="card-container">
-    <div  *ngFor="let country of countries">
-        <app-country [country]="country"></app-country>
-    </div>
+        <app-country 
+            *ngFor="let country of countries" 
+            [country]="country" 
+            routerLink="/country/{{country.cca2}}" >
+        </app-country>
+
     </div>
 </div>

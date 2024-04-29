@@ -1,0 +1,23 @@
+li {
+    display: inline;
+    cursor: pointer;
+    margin: auto;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 0.8em 1em;
+    text-decoration: none;
+    color: #000000;
+}
+
+.topnav a:hover {
+    background-color: floralwhite;
+}
