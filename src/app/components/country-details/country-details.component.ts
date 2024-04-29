@@ -15,6 +15,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 export class CountryDetailsComponent implements OnInit{
   @Input() country?: Country;
   languages: any;
+  currencies: any;
   density: number = 0.0;
 
   constructor( 
@@ -30,12 +31,17 @@ export class CountryDetailsComponent implements OnInit{
         {
           this.country = response;
           this.languages = this.country.languages;
+          this.currencies = this.country.currencies;
           this.density = this.country.population / this.country.area;
         });      
      })
   }
 
-  getLanguageKeys(obj: any): string[] {
-    return Object.keys(obj);
+  getLanguageKeys(): string[] {
+    return Object.keys(this.languages);
+  }
+
+  getCurrencyKeys(): string[] {
+    return Object.keys(this.currencies);
   }
 }

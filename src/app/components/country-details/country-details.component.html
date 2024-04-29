@@ -4,6 +4,11 @@
     <span class="label">Official name: </span>
     <span class="value">{{country?.name?.official}}</span>
 </div>
+<div class="label-value-container" *ngIf="languages">
+    <span class="label">Official languages: </span>
+    <span *ngFor="let lang of getLanguageKeys(); index as i"  
+        class="value"><span *ngIf="i>0">&#8226;</span> {{languages[lang]}} </span>
+</div>
 <div class="flag-container">
 <img class="flag" src={{country?.flags?.png}} height="200px" width="auto" alt="National Flag"/>
 <img src={{country?.coatOfArms?.png}} height="200px" width="auto" alt="National Emblem"/>
@@ -19,15 +24,14 @@
     <span class="value">{{country?.capital}} ({{country?.capitalInfo?.latlng}})</span>
 </div>
 <div class="label-value-container">
+    <span class="label">Denonyms: </span>
+    <span class="value">{{country?.demonyms?.eng?.m}}</span>
+</div>
+<div class="label-value-container">
     <a href="{{country?.maps?.openStreetMaps}}">Open in OpenStreetMaps</a>
 </div>
 <div class="label-value-container">
     <a href="{{country?.maps?.googleMaps}}">Open in Google Maps</a>
-</div>
-<div class="label-value-container" *ngIf="languages">
-    <span class="label">Official languages: </span>
-    <span *ngFor="let lang of getLanguageKeys(languages); index as i"  
-        class="value"><span *ngIf="i>0">&#8226;</span> {{languages[lang]}} </span>
 </div>
 <hr>
 <div class="label-value-container">
@@ -41,6 +45,28 @@
 <div class="label-value-container">
     <span class="label">Density: </span>
     <span class="value">{{density | number}} / km<sup>2</sup></span>
+</div>
+<hr>
+<div class="label-value-container">
+    <span class="label">Border with: </span>
+    <div class="border-container">
+    <button class="border-button" type="button" 
+       *ngFor="let border of country?.borders"
+       routerLink='/country/{{border}}'
+       >{{border}} 
+    </button>
+    </div>
+</div>
+<hr>
+<div class="label-value-container" *ngIf="languages">
+    <span class="label">Currencies: </span>
+    <span *ngFor="let currency of getCurrencyKeys(); index as i" class="value">
+        {{currencies[currency].name}} ({{currencies[currency].symbol}}), {{currency}}</span>
+</div>
+<div class="label-value-container" *ngIf="languages">
+    <span class="label">Time zones: </span>
+    <span *ngFor="let zone of country?.timezones" class="value">
+        {{zone}} </span>
 </div>
 </div>
 <button type="button" routerLink="">Back</button>
