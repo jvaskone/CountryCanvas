@@ -1,3 +1,5 @@
+@import '../colors.scss';
+
 li {
     display: inline;
     cursor: pointer;
@@ -5,10 +7,10 @@ li {
 }
 
 .topnav {
-    overflow: hidden;
-    background-color: antiquewhite;          
+    overflow: hidden;    
+    background-color: $button-bg;      
     &.dark-theme {
-        background-color: darkslategray;        
+        background-color: $dark-button-bg;        
     }
 }
 
@@ -25,9 +27,9 @@ li {
 }
 
 .topnav a:hover {
-    background-color: floralwhite;
+    background-color: $button-bg-hover;
     &.dark-theme {
-      background-color: green;
+      background-color: $dark-button-bg-hover;
     }
 }
 
@@ -73,7 +75,7 @@ li {
         visibility: hidden;
         position: absolute;
         &:checked + label {
-          background: green;
+          background:  $dark-button-bg-hover;
         }
         &:checked + label:after {
           left: calc(100% - 3px);
