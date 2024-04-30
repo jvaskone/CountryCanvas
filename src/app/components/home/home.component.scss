@@ -1,15 +1,8 @@
-// .card-container {
-//     -webkit-columns: 4;
-//     -moz-columns: 4;
-//     columns: 4;
-//     padding: 1em;
-// }
-
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 2rem;
-    margin: 4rem 5vw;
-    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 0 0;
+    padding: 1rem;
     list-style-type: none;
 }

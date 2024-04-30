@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries/countries.service';
 import { Country } from '../../model/country';
 import { CommonModule } from '@angular/common';
+import { ThemeSwitcherService } from '../../services/theme-switcher.service';
 
 @Component({
   selector: 'app-country',
@@ -13,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class CountryComponent implements OnInit {
   @Input() country?: Country;
 
-  constructor(public countriesService: CountriesService) {
+  constructor(public countriesService: CountriesService, public themeService: ThemeSwitcherService) {
 
   }
 

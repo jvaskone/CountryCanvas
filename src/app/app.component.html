@@ -1,7 +1,12 @@
-<div class="topnav">
-    <a href="#" routerLink="">Home</a>
+<div class="topnav" [ngClass]="{'dark-theme': themeService.isDarkTheme()}">
+    <a href="#" routerLink="" [ngClass]="{'dark-theme': themeService.isDarkTheme()}">Home</a>
 </div>
-<!-- <div class="">
-    <button type="button" routerLink="">Home</button>
-</div> -->
+<div class="switch-wrapper" >
+    <div class="sun" [ngClass]="{'dark-theme': themeService.isDarkTheme()}"></div>
+    <div class="toggle-wrapper">
+      <input id="switch" type="checkbox" [checked]="nightMode" (click)='switchTheme()'/>
+      <label for="switch" id="toggle">Toggle</label>
+    </div>
+    <div class="moon" [ngClass]="{'dark-theme': themeService.isDarkTheme()}"></div>
+  </div>
 <router-outlet />

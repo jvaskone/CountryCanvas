@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries/countries.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Country } from '../../model/country';
 import { CountryComponent } from "../country/country.component";
 import { RouterModule } from '@angular/router';
+import { ThemeSwitcherService } from '../../services/theme-switcher.service';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
-    imports: [NgFor, NgIf, CountryComponent, RouterModule]
+    imports: [NgFor, NgIf, CountryComponent, RouterModule, NgClass]
 })
 export class HomeComponent implements OnInit{
 
   countries!: Array<Country>;
 
-  constructor(private countriesService: CountriesService) {
+  constructor(private countriesService: CountriesService,
+    public themeService: ThemeSwitcherService) {
 
   }
 

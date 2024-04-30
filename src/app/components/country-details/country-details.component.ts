@@ -3,6 +3,7 @@ import { Country } from '../../model/country';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CountriesService } from '../../services/countries/countries.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { ThemeSwitcherService } from '../../services/theme-switcher.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class CountryDetailsComponent implements OnInit{
 
   constructor( 
     public activatedRoute: ActivatedRoute,
-    private countryService: CountriesService) {
+    private countryService: CountriesService,
+    public themeService: ThemeSwitcherService) {
 
   }
 

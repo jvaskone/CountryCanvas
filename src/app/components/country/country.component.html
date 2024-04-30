@@ -1,4 +1,4 @@
-<div class="card" >
+<div class="card" [ngClass]="{'dark-theme': themeService.isDarkTheme()}" >
     <h3>{{country?.name?.common}}</h3>
     <img src={{country?.flags?.png}} />
 
