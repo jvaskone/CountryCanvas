@@ -1,7 +1,8 @@
+@import '../../../colors.scss';
 .description-container {
     &.dark-theme {
         a {
-            color: greenyellow;
+            color: $dark-link-color;
         }
     }
 }
