@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href /CountryCanvas/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --watch=false",
+    "delete-old": "rmdir /s /q docs",
+    "copy-dist-files": "xcopy /s /e dist\\country-canvas\\browser\\* docs\\ && copy docs\\index.html docs\\404.html && copy dist\\country-canvas\\3rdpartylicenses.txt docs\\",
+    "deploy": "npm run test && npm run build && npm run delete-old && npm run copy-dist-files"
   },
   "private": true,
   "dependencies": {
