@@ -34,6 +34,6 @@ export class ThemeSwitcherService {
      } else {
        this.body?.classList.add('dark-theme');
      }
-    console.log("Theme switched, body classList toggled");
+    //console.log("Theme switched, body classList toggled");
   }
 }

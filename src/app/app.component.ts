@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(public themeService: ThemeSwitcherService) {
     this.theme = themeService.theme;
     this.nightMode = themeService.theme == "dark-theme";
-    console.log("this.nightmode: "+this.nightMode);
+    //console.log("this.nightmode: "+this.nightMode);
   }
 
   switchTheme() {
