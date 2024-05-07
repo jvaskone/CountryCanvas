@@ -2,8 +2,8 @@
     <div class="sort-by-container">
         <label for="regionFilter">Sort by:</label>
         <div class="sortBy" [ngClass]="{'dark-theme': themeService.isDarkTheme()}">            
-            <label name="sortByFilter">{{selectedSortBy}}</label>
-            <i (click)="setDropDown(!dropDown)" class="fa fa-caret-down"></i>
+            <label name="sortByFilter" id="sort-by-label">{{selectedSortBy}}</label>
+            <i (click)="setDropDown(!dropDown)" class="fa fa-caret-down" id="selectElement"></i>
         </div>
     <div *ngIf="dropDown" class="sort-options" id='sort-options' [ngClass]="{'dark-theme': themeService.isDarkTheme()}">
             <div class="sort-item" [ngClass]="{'dark-theme': themeService.isDarkTheme()}"
