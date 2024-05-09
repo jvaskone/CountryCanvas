@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 enum SortingOptions {
   Population = 'Population',
   Area = 'Area',
-  Alphabetically = 'Alphabetically',
+  Alphabetically = 'Name',
   Density = 'Density'
 }
 
@@ -54,8 +54,7 @@ export class HomeComponent implements OnInit{
 
   handleSortByChanged(selectedValue: string) {
     this.selectedSortBy = selectedValue;
-    this.dropDown = false;
-    console.log(selectedValue);
+    this.dropDown = false;    
     this.countriesService.getCountries().subscribe(response => {
       this.countries = response;
       switch(selectedValue) {
