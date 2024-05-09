@@ -53,7 +53,7 @@
     <button class="border-button" type="button" 
        *ngFor="let border of country?.borders"
        routerLink='/country/{{border}}'
-       >{{border}} 
+       >{{getBorderName(border)}} 
     </button>
     </div>
 </div>

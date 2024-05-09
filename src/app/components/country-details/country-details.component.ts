@@ -38,6 +38,10 @@ export class CountryDetailsComponent implements OnInit{
      })
   }
 
+  getBorderName(name: string) {
+    return this.countryService.getCountryNameFromCode(name);
+  }
+
   getLanguageKeys(): string[] {
     return Object.keys(this.languages);
   }
