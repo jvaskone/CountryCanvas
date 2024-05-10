@@ -4,7 +4,7 @@
 <div class="switch-wrapper" >
     <div class="sun" [ngClass]="{'dark-theme': themeService.isDarkTheme()}"></div>
     <div class="toggle-wrapper">
-      <input id="themeSwitcher" type="checkbox" [checked]="nightMode" (click)='switchTheme()'/>
+      <input id="switch" type="checkbox" [checked]="nightMode" (click)='switchTheme()' />
       <label for="switch" id="toggle">Toggle</label>
     </div>
     <div class="moon" [ngClass]="{'dark-theme': themeService.isDarkTheme()}"></div>

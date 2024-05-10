@@ -36,7 +36,7 @@ describe('AppComponent', () => {
   it('should toggle darkTheme when the switch is clicked', () => {
     // Arrange: Retrieve the theme switcher element
     app.theme = "light-theme";
-    const switchEl = fixture.nativeElement.querySelector('#themeSwitcher');
+    const switchEl = fixture.nativeElement.querySelector('#switch');
 
     // Act: Simulate clicking the switch
     switchEl.click();
